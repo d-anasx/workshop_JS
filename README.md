@@ -46,10 +46,10 @@ students.push("anas");
 
 ### Correct Event Listener Syntax
 ```javascript
-// ✅ Correct - pass the function reference
+// ✅ Correct 
 btn.addEventListener("click", myFunction);
 
-// ❌ Wrong - calls the function immediately
+// ❌ Wrong 
 btn.addEventListener("click", myFunction());
 ```
 
@@ -382,6 +382,43 @@ for (let i = 1; i <= 3; i++) {
 - `var` creates **one variable** for the whole scope
 - `let` creates a **new variable** for each block
 
+
+---
+
+## 🌐 7. FETCH API - Working with APIs
+
+### Complete Fetch Example
+```javascript
+
+
+async function loadUsers() {
+  try {
+    // Fetch data from API
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    
+    // Check if request was successful
+    if (!response.ok) {
+      throw new Error("Failed to fetch users");
+    }
+    //  Convert response to JSON
+    const users = await response.json();
+    
+  } catch (error) {
+    // 6. Handle errors
+    console.error("Error:", error);
+    usersList.innerHTML = "Failed to load users!";
+  }
+}
+
+```
+
+### Key Points
+
+- **`async`** - Makes the function asynchronous
+- **`await`** - Waits for the fetch to complete
+- **`try/catch`** - Handles any errors that occur
+- **`response.ok`** - Checks if the request succeeded
+- **`.json()`** - Converts the response to a JavaScript object
 
 ---
 
